@@ -5,16 +5,20 @@
 
 ## Overview
 
-Users often use the RProfile to attach the packages they often use but
-this approach is not ideal as it lacks flexibility and can get in the
-way of reproducibility.
+Users often use their *.Rprofile* to attach the packages they often use
+but this approach is not ideal as it lacks flexibility and can get in
+the way of reproducibility.
 
 *{myverse}* is a fork of the *{tidyverse}* package that provides a way
 to attach a predefined list of chosen packages.
 
-You may your *.Rprofile* to set the `myverse.pkgs` option, and then
+You may edit your *.Rprofile* to set the `myverse.pkgs` option, and then
 `myverse::myverse_attach()` will attach your chosen packages, explicitly
 by default, just like `library(tidyverse)` does.
+
+Note: Mike Kearney wrote the package
+[{pkgverse}](https://pkgverse.mikewk.com/) which has some overlapping
+functionalities. See comparison at the bottom.
 
 ## Installation
 
@@ -75,3 +79,22 @@ myverse::myverse_attach("muddyverse")
   - The code is essentially taken from tidyverse, alterations were done
     to adapt the functionalities and to remove dependencies towards
     tidyverse packages
+
+## Comparison with {pkgverse}
+
+*{pkgverse}* helps you build metapackages, it is similar in many ways
+but there are a few differences to consider to make your choice :
+
+  - *{pkgverse}* generates actual packages, it makes your scripts
+    perfectly clean and reproducible if you can push the metapackage to
+    CRAN or to your organization’s repo. Indeed it won’t rely on your
+    own system’s *.Rprofile*.
+  - *{myverse}* is quicker and makes it easier to iterate
+    (e.g. overwrite a setup), and you don’t leave clutter if you don’t
+    need a setup anymore.
+  - *{pkgverse}* allows you to have metapackages like *{tidyverse}* be
+    part of your package clusters while *{pkgverse}* will insist that
+    you provide the dependencies separately.
+  - *{myverse}* might support sourcing scripts in the close future.
+  - *{myverse}* has very lightweight dependencies (*{crayon}*, *{cli}*
+    and *{rstudioapi}*).
