@@ -15,7 +15,7 @@ Authors@R:
              role = "ctb", 
              comment = "Copyright holder of the tidyverse package"))
 Description: Define a list of packages as options and attach them easily by attaching
-    the 'myverse' package. This is arguably better than using the RProfile because
+    the 'myverse' package. This is arguably better than using the .Rprofile because
     you need to opt in in each session so this won't damage reproductibility, moreover
     this prints the list of attached packages and their versions. This is directly
     inspired by the Hadley Wickham's 'tidyverse' package and borrows some of its
