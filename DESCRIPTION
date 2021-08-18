@@ -1,0 +1,39 @@
+Package: myverse
+Title: Easily Load a Set of Packages
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Antoine",
+             family = "Fabri",
+             role = c("aut", "cre"),
+             email = "antoine.fabri@gmail.com"),
+      person(given = "Hadley",
+             family = "Wickham",
+             role = "ctb", 
+             comment = "Author of the tidyverse package which this package's code derives from",
+             email = "hadley@rstudio.com"),
+      person(given = "RStudio",
+             role = "ctb", 
+             comment = "Copyright holder of the tidyverse package"))
+Description: Define a list of packages as options and attach them easily by attaching
+    the 'myverse' package. This is arguably better than using the RProfile because
+    you need to opt in in each session so this won't damage reproductibility, moreover
+    this prints the list of attached packages and their versions. This is directly
+    inspired by the Hadley Wickham's 'tidyverse' package and borrows some of its
+    code and look.
+License: MIT + file LICENSE
+URL: https://github.com/moodymudskipper/myverse
+BugReports: https://github.com/moodymudskipper/myverse/issues
+Depends: 
+    R (>= 3.3)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+RoxygenNote: 7.1.1.9001
+Imports: 
+    crayon,
+    cli,
+    rstudioapi
